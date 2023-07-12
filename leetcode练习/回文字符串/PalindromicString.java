@@ -1,5 +1,3 @@
-package com.itheima.test_02;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
