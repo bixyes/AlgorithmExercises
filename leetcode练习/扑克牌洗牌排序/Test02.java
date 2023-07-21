@@ -77,25 +77,18 @@ public class Test02 {
         Comparator<String> comparator = new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
-                //大小王最大，直接返回1或-1
-                if ("大王".equals(o1)) {
-                    return 1;
+//                // 其他情况，按照点数大小比较，花色不影响
+//                // 截取字符串的最后一个字符作为点数
+                String number1 = o1;
+                String number2 = o2;
+                if (!o1.substring(1).equals("王")) {
+                    number1 = o1.substring(1);
                 }
-                if ("大王".equals(o2)) {
-                    return -1;
+                if (!o2.substring(1).equals("王")) {
+                    number2 = o2.substring(1);
                 }
-                if ("小王".equals(o1)) {
-                    return 1;
-                }
-                if ("小王".equals(o2)) {
-                    return -1;
-                }
-                // 其他情况，按照点数大小比较，花色不影响
-                // 截取字符串的最后一个字符作为点数
-                String number1 = o1.substring(o1.length() - 1);
-                String number2 = o2.substring(o2.length() - 1);
                 // 定义一个数组，存储点数对应的大小顺序
-                String[] numbers = {"3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "2"};
+                String[] numbers = {"3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "2","小王","大王"};
                 // 遍历数组，找到点数对应的索引值，索引值越大，点数越大
                 int index1 = -1;
                 int index2 = -1;
