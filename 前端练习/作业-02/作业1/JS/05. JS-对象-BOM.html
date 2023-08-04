@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-BOM</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //BOM对象模型：https://www.w3school.com.cn/jsref/obj_window.asp
+
+    /**
+     * window对象
+     *      confirm 方法：对话框
+     *      setInterval 方法：定时器，周期性的执行某一个函数
+     *      setTimeout 方法：定时器，延迟指定时间执行一次
+     */
+    let flag1 = confirm("确认要删除吗？");
+
+    let flag2 = window.setInterval(()=>{
+        document.write("<h1>Hello,World!</h1>");
+    },1000);
+     
+    window.setTimeout(()=>{
+        clearInterval(flag2)
+    },5000)
+    /**
+     * location对象
+     *      href 属性：设置或返回完整的URL
+     */ 
+    //let l=location.href = "http://www.itcast.cn"
+
+    //如何实现2秒钟，页面自动跳转效果？
+    window.setTimeout(()=>{
+        location.href = "http://www.itcast.cn"
+    },2000)
+</script>
+
+</html>

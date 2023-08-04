@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现5秒之后，跳转到官网页面</title>
+</head>
+
+<body>
+    <span id="time">5</span>秒之后跳转到官网首页
+    <script>
+        //实现5秒之后，跳转到官网页面
+        window.setTimeout(()=>{
+            location.href = "http://www.itcast.cn"
+        },5000)
+    </script>
+</body>
+
+</html>

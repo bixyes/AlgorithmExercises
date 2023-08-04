@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-函数</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    
+    //定义函数-方式1
+    function fun1(a,b){
+        return a + b;
+    }
+    //定义函数-方式2
+    let fun2 = function(a,b){
+        return a-b;
+    }
+    //定义函数-方式3（箭头函数）
+    let fun3 =(a,b)=>{
+        return a*b;
+    }
+    //函数调用
+    document.writeln(typeof fun1(1,2));
+    document.writeln(fun1(1,2));
+    document.writeln("fun1"+fun2(2,3));
+    document.writeln(fun3(1,2));
+    
+
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-DOM-案例</title>
+</head>
+
+<body>
+    <img id="h1" src="img/off.gif"> <br><br>
+
+    <div class="cls">传智教育</div> <br>
+    <div class="cls">黑马程序员</div> <br>
+    <div id="d1" style="color: red;">Hello,world</div> <br>
+
+    <input type="checkbox" name="hobby"> 电影
+    <input type="checkbox" name="hobby"> 旅游
+    <input type="checkbox" name="hobby"> 游戏
+</body>
+
+<script>
+    //1. 点亮灯泡 : src 属性值
+    document.querySelector("#h1").src = "img/on.gif";
+    //2. 将所有div标签的内容后面加上: very good (红色字体) -- <font color='red'></font>
+    let arr  = document.querySelectorAll(".cls");
+    arr.forEach((item,index)=>{
+        item.innerHTML+="<span style='color:red'>very good</span>"
+    })
+
+
+    document.getElementById("d1").style.position = "absolute";
+    document.getElementById('d1').style.left = "0px";
+    document.getElementById('d1').style.top = "0px";
+
+    //3. 使所有的复选框呈现选中状态
+    let inputs = document.querySelectorAll("input");
+    inputs.forEach((item,index)=>{
+        item.checked = true;
+    })
+
+</script>
+
+</html>

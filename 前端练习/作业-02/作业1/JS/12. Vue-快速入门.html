@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-快速入门</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 3. 将vue的data数据区的数据展示页面 -->
+        {{msg}}<br>
+        <input v-model="msg"></input><br>
+    </div>
+</body>
+
+<!-- 1. 引入vue.js -->
+<script src="js/vue.js"></script>
+
+<!-- 2. 编写JS代码 -->
+<script>
+    new Vue({
+        // el:  element元素   表示Vue对象管理的html范围
+        "el": "#app",   
+        //vue的数据区(自己定义属性键值对)
+        "data": {
+            "msg": "hello vue",
+        }
+    });
+</script>
+
+</html>

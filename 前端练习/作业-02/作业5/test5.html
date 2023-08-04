@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业3</title>
+</head>
+
+<body>
+    <div style="font-size: 30px; text-align: center;" id="tb1">课程表</div>
+    <table width="800px" border="1" cellspacing="0" align="center">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>分数</th>
+            <th>评语</th>
+        </tr>
+        <tr align="center" class="data">
+            <td>001</td>
+            <td>张三</td>
+            <td>90</td>
+            <td>很优秀</td>
+        </tr>
+        <tr align="center" class="data">
+            <td>002</td>
+            <td>李四</td>
+            <td>92</td>
+            <td>优秀</td>
+        </tr>
+        <tr align="center" class="data">
+            <td>003</td>
+            <td>王五</td>
+            <td>83</td>
+            <td>很努力,不错</td>
+        </tr>
+        <tr align="center" class="data">
+            <td>004</td>
+            <td>赵六</td>
+            <td>98</td>
+            <td>666</td>
+        </tr>
+    </table>
+
+    <br>
+</body>
+
+<script>
+    // 需求: 实现鼠标移入隔行换色效果 , 如果是基数行, 背景色为 #FFFFBE, 偶数行为: #C2C2FF ; 鼠标移出之后, 设置为默认的背景色白色 .
+    let arr = document.getElementsByClassName("data");
+    for(let i=0;i<arr.length;i++){
+        arr[i].onmouseout=function(){
+                arr[i].style.backgroundColor = "white";
+            }
+        if((i+1)%2==0){
+            arr[i].onmousemove=function(){
+                 arr[i].style.backgroundColor="#C2C2FF";
+            }
+        }else{
+            arr[i].onmousemove=function(){
+                 arr[i].style.backgroundColor="#FFFFBE";
+            }
+        }
+    } 
+    
+</script>
+
+</html>

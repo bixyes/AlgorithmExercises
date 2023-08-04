@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-Array</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //Array文档：https://www.w3school.com.cn/jsref/jsref_obj_array.asp
+
+
+    //定义数组
+    let arr = ["java","python",".net","C#"];
+    //push: 添加元素到数组末尾
+    arr.push("C++");
+
+    //遍历数组 - for循环遍历
+    for(let i=0;i<arr.length;i++){
+        document.writeln(arr[i]);
+    }
+    //遍历数组 - forEach方法
+    arr.forEach((item,index)=>{
+        document.writeln(`${index}=>${item}`);
+    })
+</script>
+
+</html>

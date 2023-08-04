@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-JSON</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //自定义对象：key字符串类型，value任意类型（string，number，数组，对象， 布尔，方法）
+    let user={
+        username:"zs",
+        password:"123456",
+        address:"武汉",
+        age:20,
+        eat: function(){
+            alert("吃喝。。。");
+        }
+    }
+
+    //给自定义对象添加属性
+    user.gender = "男";
+    //获取自定义对象的属性
+    // alert(user.gender);
+    //JSON文档：https://www.w3school.com.cn/jsref/jsref_obj_json.asp
+    //定义json
+    let json1 = {
+        "name":"zs",
+        "age":20
+    }
+
+
+    json1.address = ["武汉","深圳"];
+    let str=JSON.stringify(json1);
+    document.write(str+"<br>");
+
+    let j = JSON.parse(str);
+    document.writeln(j);
+    document.writeln(j.name+"<br>");
+
+    //使用json
+    let users2 = {
+        name:"zs",
+        address:{
+            province:"湖北",
+            city:"武汉"
+        }
+    }
+
+    document.write(users2.address.city);
+</script>
+
+</html>

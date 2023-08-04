@@ -1,0 +1,8 @@
+POST和GET是HTTP协议中两种常用的请求方法。它们之间的区别：
+数据传输方式不同：GET请求将数据作为URL的一部分发送，而POST请求将数据放在HTTP请求的正文中。
+数据大小限制不同：GET请求的数据大小受URL长度限制，而POST请求对数据大小没有限制。
+安全性不同：GET请求的数据在URL中可见，因此不适合传输敏感信息。POST请求的数据不会显示在URL
+中，因此相对更安全。
+除了POST和GET请求外，HTTP协议还定义了其他几种请求方法，包括OPTIONS、PUT、DELETE、HEAD
+、TRACE和CONNECT。这些方法用于执行不同的操作，例如PUT用于上传指定的URI表示，DELETE用于
+删除指定的资源，HEAD类似于GET请求，但只返回HTTP报头而不返回文档主体。

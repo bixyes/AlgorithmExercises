@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业3</title>
+</head>
+
+<body>
+    <div style="font-size: 30px; text-align: center;" id="tb1">课程表</div>
+    <table width="800px" border="1" cellspacing="0" align="center">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>分数</th>
+            <th>评语</th>
+        </tr>
+        <tr align="center" class="data">
+            <td>001</td>
+            <td>张三</td>
+            <td>90</td>
+            <td>很优秀</td>
+        </tr>
+        <tr align="center" class="data">
+            <td>002</td>
+            <td>李四</td>
+            <td>92</td>
+            <td>优秀</td>
+        </tr>
+        <tr align="center" class="data">
+            <td>003</td>
+            <td>王五</td>
+            <td>83</td>
+            <td>很努力,不错</td>
+        </tr>
+        <tr align="center" class="data">
+            <td>004</td>
+            <td>赵六</td>
+            <td>98</td>
+            <td>666</td>
+        </tr>
+    </table>
+
+    <br>
+    
+    <div style="text-align: center;">
+        <input id="b1" type="button" value="改变标题内容">
+        <input id="b2" type="button" value="改变标题颜色">
+        <input id="b3" type="button" value="删除最后一行">
+    </div>
+</body>
+
+<script>
+    //1. 点击 “改变标题内容” 按钮，需要将div中展示的标题内容替换为 “学员成绩表”
+    document.getElementById("b1").onclick=function(){
+        document.getElementById("tb1").innerHTML="学员成绩表";
+    }
+    //2. 点击 “改变标题颜色” 按钮，需要将div中展示的标题内容以 红色 字体展示（字体保持原有大小，居中, 提示: 操作style属性控制css样式）
+    document.getElementById("b2").onclick=function(){
+        document.getElementById("tb1").style.color="red";
+    }
+    //3. 点击  “删除最后一行” 按钮，需要将表格中的最后一行数据删除掉，删除行可以调用tr这个DOM对象的remove()方法
+    document.getElementById("b3").onclick=function(){
+        let arr = document.querySelectorAll(".data");
+        let index = arr.length-1;
+        arr[index].remove();
+    }
+</script>
+
+</html>
