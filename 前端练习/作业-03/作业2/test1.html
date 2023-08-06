@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业5</title>
+</head>
+
+<body>
+    <!--3 将模型数据和视图进行绑定-->
+    <div id="app">
+        <!-- 展示模型数据 -->
+        <p>输入的姓 名是：{{user.name}}</p>
+        <p>输入的年 龄是：{{user.age}}</p>
+        <p>选择的性 别是：{{user.gender}}</p>
+        <p>选择的爱 好是：{{user.hobby}}</p>
+        
+        <hr>
+        
+        <form action="">
+            姓名:<input type="text" v-model="user.name"><br><br>
+
+            年龄:<input type="text" v-model="user.age"><br><br>
+
+            性别:<label><input type="radio" value="man" v-model="user.gender">男</label>
+            <label><input type="radio" value="woman" v-model="user.gender">女</label><br><br>
+
+            爱好:<label><input type="checkbox" value="sing" v-model="user.hobby">唱</label>
+            <label><input type="checkbox" value="dance" v-model="user.hobby">跳</label>
+            <label><input type="checkbox" value="basketball" v-model="user.hobby">篮球</label><br><br>
+                
+            <input type="button" id="btn" value="保存" @click="save">
+        </form>
+    </div>
+
+<!--1 引入js文件-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<!--2 定义Vue对象，初始化模型数据-->
+<script>
+    new Vue({
+        el:"#app", //定义Vue控制的区域
+        data:{
+            user:{
+                name: "", //姓名
+                age: "",  //年龄
+                gender: "", //性别
+                hobby: []   //由于爱好可能存在多个,使用数组封装          
+            }
+        },
+        methods: {
+                save: function(){
+                    alert(JSON.stringify(this.user));
+                }
+            }
+    });
+</script>
+
+</body>
+</html>

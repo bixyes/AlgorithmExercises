@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业</title>
+</head>
+
+<body>
+    <!--3 将模型数据和视图进行绑定-->
+    <div id="app">
+        <!--扩展需求：在下方表格中展示品牌信息-->
+        <table id="brandTable" border="1" cellspacing="0" width="100%">
+            <tr>
+                <th>序号</th>
+                <th>品牌名称</th>
+                <th>企业名称</th>
+                <th>排序</th>
+                <th>品牌介绍</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+
+            <tr v-for="(brand,index) in brands" align="center">
+                <td>{{index+1}}</td>
+                <td>{{brand.brandName}}</td>
+                <td>{{brand.companyName}}</td>
+                <td>{{brand.ordered}}</td>
+                <td>{{brand.description}}</td>
+                <td>
+                    <font :style="{color:brand.status==1?'green':'red'}">{{brand.status==1?"启用":"禁用"}}</font>
+                </td>
+                <td><a href="#">修改</a> <a href="#">删除</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <!--1 引入js文件-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!--2 定义Vue对象，初始化模型数据-->
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                brands: [{
+                    brandName: "三只松鼠",
+                    companyName: "三只松鼠",
+                    ordered: "100",
+                    description: "三只松鼠，好吃不上火",
+                    status: 1
+                }, {
+                    brandName: "优衣库",
+                    companyName: "优衣库",
+                    ordered: "10",
+                    description: "优衣库，服适人生",
+                    status: 0
+                }, {
+                    brandName: "小米",
+                    companyName: "小米科技有限公司",
+                    ordered: "1000",
+                    description: "为发烧而生",
+                    status: 0
+                }, {
+                    brandName: "华为",
+                    companyName: "华为科技有限公司",
+                    ordered: "100",
+                    description: "没有伤痕累累，哪来皮糙肉厚，英雄自古多磨难",
+                    status: 1
+                }]
+            }
+        });
+    </script>
+</body>
+
+</html>
